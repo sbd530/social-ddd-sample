@@ -10,7 +10,7 @@ value class Timestamp(val duration: Duration)
 fun Duration.toTimestamp() = Timestamp(duration = this)
 
 data class Image(
-    val url: ImageFileLocation,
+    val fileLocation: ImageFileLocation,
     val size: ImageSize? = null,
     val width: Int? = null,
     val height: Int? = null

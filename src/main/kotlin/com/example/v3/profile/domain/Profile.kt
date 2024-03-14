@@ -5,6 +5,7 @@ import java.util.UUID
 
 data class Profile(
     val uid: ProfileUid,
+    val owner: ProfileOwner,
     val nickname: Nickname,
     val image: Image?,
     val createdAt: Timestamp,

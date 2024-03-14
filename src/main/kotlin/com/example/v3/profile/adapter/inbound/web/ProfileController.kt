@@ -7,8 +7,8 @@ import com.example.v3.member.domain.MemberUid
 import com.example.v3.profile.application.port.inbound.CreateProfileCommand
 import com.example.v3.profile.application.port.inbound.ProfileUseCase
 import com.example.v3.profile.domain.Profile
+import jakarta.validation.constraints.NotBlank
 import jakarta.validation.constraints.NotEmpty
-import org.hibernate.validator.constraints.Length
 import org.springframework.validation.annotation.Validated
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
@@ -44,4 +44,4 @@ data class CreateProfileResponse(val profileUid: String) {
 private fun Profile.toCreateProfileResponse() =
     CreateProfileResponse(profileUid = this.uid.toString())
 
-data class UpdateProfileImageRequest(@Length(min = 3, max = 12) val profileImageUrl: String)
+data class UpdateProfileImageRequest(@NotBlank val profileImageUrl: String)
